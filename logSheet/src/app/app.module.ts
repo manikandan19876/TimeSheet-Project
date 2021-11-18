@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {DropdownModule} from 'primeng-lts/dropdown';
 import { NavBarComponent } from './nav-bar/nav-bar.component'
 import {CalendarModule} from 'primeng-lts/calendar';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ToolbarModule} from 'primeng-lts/toolbar';
 
 
 
@@ -17,7 +19,8 @@ import {CalendarModule} from 'primeng-lts/calendar';
   declarations: [
     AppComponent,
     TimeSheetTimeSeriesComponent,
-    NavBarComponent
+    NavBarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -25,10 +28,11 @@ import {CalendarModule} from 'primeng-lts/calendar';
     InputTextModule,
     BrowserAnimationsModule,
     DropdownModule,
-    CalendarModule,    
+    CalendarModule,
+    ToolbarModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
- 

@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'logSheet';
+
+  cities=[{name:"2 Months"}];
 }

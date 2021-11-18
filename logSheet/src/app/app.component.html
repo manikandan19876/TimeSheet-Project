@@ -1,2 +1,33 @@
 <router-outlet></router-outlet>
-<input type="text" pInputText />
+<div class="container  ">
+  <div class="title">
+    <h1>Time Sheet</h1>
+  </div>
+  <div class="container-body">
+    <div class="content-body grid ">
+      <div class="first lg:col-3 flex align-items-center ; justify-content-start">
+        <div class="  ">
+          <label for="project" class="mr-2  label ">Project</label>
+        </div>
+        <p-dropdown class="p-fluid  w-full drop " optionLabel="name"></p-dropdown>
+      </div>
+      <div class="lg:col-6 second">
+        <div class=" second lg:col-12 flex align-items-center justify-content-center">
+          <label class=" mr-3   " for="duration">Duration</label>
+          <div class="calendar mb-3 ">
+            <label for="fromdate" class="">From Date</label>
+            <p-calendar dateFormat="dd.mm.yy"></p-calendar>
+          </div>
+          <div class="calendar mb-3">
+            <label for="fromdate" class="">To Date</label>
+            <p-calendar dateFormat="dd.mm.yy"></p-calendar>
+          </div>
+        </div>
+      </div>
+      <div class="first lg:col-3 flex align-items-center ; justify-content-start">
+        <div class="  ">
+          <label for="project" class=" mr-2  label ">Group by</label>
+        </div>
+        <p-dropdown class="p-fluid  w-8  drop " optionLabel="name"></p-dropdown>
+      </div>
+    </div>

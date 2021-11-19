@@ -1,13 +1,5 @@
-.labels{
-  line-height: 55px;
-  font-size: 15px;
-  cursor: pointer;
+span.p-menuitem-text {
+  font-size: 14px;
 }
 
-.labels:hover{
-  border-bottom: 2px solid #0078E3;
-}
 
-.navs{
-  margin-left: 12px;
-}

@@ -1,36 +1,35 @@
 <div class="container ">
-  <div class="container-body ml-1 ">
+  <div class="container-body ml-3 ">
     <div class="content-body w-full grid">
-      <div class="first lg:col-3 flex align-items-center ; justify-content-start">
-        <div class="">
-          <label for="project" class="mr-2 sub-heading">Project</label>
+      <div class="first lg:col-2 flex align-items-center ; justify-content-start">
+        <div class="calendar col-12 mb-1">
+          <label for="fromdate" class="sub-heading">Project</label>
+          <p-dropdown class="p-fluid w-full drop" optionLabel="name"></p-dropdown>
         </div>
-        <p-dropdown class="p-fluid w-full drop" optionLabel="name"></p-dropdown>
       </div>
-      <div class="lg:col-6 second">
+      <div class="lg:col-4  second">
         <div class="
             second
             lg:col-12
             flex
             align-items-center
-            justify-content-center
+            justify-content-start
           ">
-          <label class="mr-3 sub-heading" for="duration">Duration</label>
-          <div class="calendar col-12 md:col-4">
+          <div class="calendar col-12 md:col-6 heading">
             <label for="fromdate" class="sub-heading">From Date</label>
             <p-calendar dateFormat="dd.mm.yy"></p-calendar>
           </div>
-          <div class="calendar col-12 md:col-4">
+          <div class="calendar col-12 md:col-6">
             <label for="fromdate" class="sub-heading">To Date</label>
             <p-calendar dateFormat="dd.mm.yy"></p-calendar>
           </div>
         </div>
       </div>
       <div class="first lg:col-3 flex align-items-center ; justify-content-start">
-        <div class="">
-          <label for="project" class="mr-2 sub-heading">Group by</label>
+        <div class="calendar col-8">
+          <label for="fromdate" class="sub-heading">Group By</label>
+          <p-dropdown class="p-fluid w-full drop" optionLabel="name"></p-dropdown>
         </div>
-        <p-dropdown class="p-fluid w-8 drop" optionLabel="name"></p-dropdown>
       </div>
     </div>
   </div>

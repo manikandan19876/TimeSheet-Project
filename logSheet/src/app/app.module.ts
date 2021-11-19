@@ -11,7 +11,9 @@ import {DropdownModule} from 'primeng-lts/dropdown';
 import { NavBarComponent } from './nav-bar/nav-bar.component'
 import {CalendarModule} from 'primeng-lts/calendar';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ToolbarModule} from 'primeng-lts/toolbar';
+
+import {TabMenuModule} from 'primeng-lts/tabmenu';
+
 
 
 
@@ -20,7 +22,7 @@ import { ToolbarModule} from 'primeng-lts/toolbar';
     AppComponent,
     TimeSheetTimeSeriesComponent,
     NavBarComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { ToolbarModule} from 'primeng-lts/toolbar';
     BrowserAnimationsModule,
     DropdownModule,
     CalendarModule,
-    ToolbarModule,
+    TabMenuModule,
+
 
   ],
   providers: [],

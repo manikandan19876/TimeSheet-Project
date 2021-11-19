@@ -11,8 +11,9 @@ import {DropdownModule} from 'primeng-lts/dropdown';
 import { NavBarComponent } from './nav-bar/nav-bar.component'
 import {CalendarModule} from 'primeng-lts/calendar';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { NgApexchartsModule } from 'ng-apexcharts';
 import {TabMenuModule} from 'primeng-lts/tabmenu';
+import { ChartsComponent } from './charts/charts.component';
 
 
 
@@ -23,6 +24,7 @@ import {TabMenuModule} from 'primeng-lts/tabmenu';
     TimeSheetTimeSeriesComponent,
     NavBarComponent,
     DashboardComponent,
+    ChartsComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import {TabMenuModule} from 'primeng-lts/tabmenu';
     DropdownModule,
     CalendarModule,
     TabMenuModule,
+    NgApexchartsModule,
 
 
   ],

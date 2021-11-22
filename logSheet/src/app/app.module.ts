@@ -18,6 +18,7 @@ import { ChartsComponent } from './charts/charts.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import { ChartsComponent } from './charts/charts.component';
     CalendarModule,
     TabMenuModule,
     NgApexchartsModule,
+    
 
 
   ],

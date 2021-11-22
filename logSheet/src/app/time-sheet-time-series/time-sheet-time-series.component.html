@@ -3,13 +3,13 @@
     <div class="first lg:col-2 flex align-items-center ; justify-content-start">
       <div class="calendar col-12 mb-2">
         <label for="fromdate" class="sub-heading">Project</label>
-        <p-dropdown class="p-fluid w-12 drop" optionLabel="name"></p-dropdown>
+         <p-dropdown id="get-request" [options]="theArray" class="p-fluid w-full drop" optionLabel="projectname"></p-dropdown> 
       </div>
     </div>
     <div class="second lg:col-2 flex align-items-center ; justify-content-start">
       <div class="calendar col-12 mb-2">
         <label for="fromdate" class="sub-heading">User</label>
-        <p-dropdown class="p-fluid w-full drop" optionLabel="name"></p-dropdown>
+        <p-dropdown id="get-request" [options]="second" class="p-fluid w-full drop" optionLabel="firstname"></p-dropdown>
       </div>
     </div>
     <div class="third lg:col-2 flex align-items-center ; justify-content-start">

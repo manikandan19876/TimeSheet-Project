@@ -1,124 +1,125 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-
-
-import {
-  ApexAxisChartSeries,
-  ApexChart,
-  ChartComponent,
-  ApexDataLabels,
-  ApexPlotOptions,
-  ApexResponsive,
-  ApexXAxis,
-  ApexLegend,
-  ApexFill,
-  ApexYAxis
-} from "ng-apexcharts";
-
-export type ChartOptions = {
-  series: ApexAxisChartSeries;
-  chart: ApexChart;
-  dataLabels: ApexDataLabels;
-  plotOptions: ApexPlotOptions;
-  responsive: ApexResponsive[];
-  xaxis: ApexXAxis;
-  legend: ApexLegend;
-  fill: ApexFill;
-  yaxis: ApexYAxis
-};
+import { Component, AfterContentInit, OnInit } from '@angular/core'
+import * as ApexCharts from 'apexcharts'
+import axios from 'axios'
 
 @Component({
   selector: 'app-charts',
   templateUrl: './charts.component.html',
-  styleUrls: ['./charts.component.css']
+  styleUrls: ['./charts.component.css'],
 })
-export class ChartsComponent implements OnInit {
+export class ChartsComponent implements AfterContentInit {
 
-  @ViewChild("chart")
-  chart: ChartComponent = new ChartComponent;
-
-  public chartOptions!: Partial<ChartOptions> | any;
-
-  constructor() {
-    this.chartOptions = {
-      series: [
-        {
-          name: "Training",
-        data: [44,54,41,67,22]
-        },
-
-        {
-          name: "Development",
-        data: [34,54,51,67,22]
-        },
-        {
-          name: "Analysis",
-        data: [21,56,23,19,22]
-        },
-        {
-          name: "Review",
-        data: [40,11,25,36,49]
-        }
-      ],
-      yaxis:{
-          title: {
-            text: "Effort",
-            style: {
-              width: "100"
-            }
-          }
-        },
-
+  constructor() {}
+  activityNam = new Array()
+  renderChart(x: string[], y: string[], z: string[], d: string[]) {
+    var options = {
       chart: {
-        type: "bar",
-        height: 400,
+        type: 'bar',
+        height: 500,
         stacked: true,
         toolbar: {
-          show: true
+          show: true,
         },
         zoom: {
-          enabled: true
-        }
+          enabled: true,
+        },
       },
+      dataLabels: {
+        enabled: false
+
+      },
+      series: [
+
+        {
+          name: 'Project-EFG',
+          data: y,
+        },
+        {
+          name: 'Project-Bestomech',
+          data: z,
+        },
+        {
+          name: 'Merchandizing-EFG',
+          data: d,
+        },
+      ],
+      xaxis: {
+        type: 'category',
+        categories: x,
+        style: {
+          fontSize: '12px',
+        },
+      },
+
       responsive: [
         {
           breakpoint: 480,
           options: {
             legend: {
-              position: "bottom",
+              position: 'bottom',
               offsetX: -10,
-              offsetY: 0
-            }
-          }
-        }
+              offsetY: 0,
+            },
+          },
+        },
       ],
       plotOptions: {
         bar: {
-          horizontal: false
-        }
+          horizontal: false,
+        },
       },
-      xaxis: {
-        type: "category",
-
-        categories: [
-          "Manikandan",
-          "Pasupathy",
-          "Krishna",
-          "Hariharan",
-          "Kishore"
-
-        ]
-    },
-    legend: {
-      position: "top",
-      horizontalAlign: 'center',
-      offsetY: 20
-    },
-    fill: {
-      opacity: 1
+      tooltip: {
+        y: {
+          formatter: function (val: any) {
+            return val + 'hr'
+          },
+        },
+      },
+      legend: {
+        position: 'top',
+        horizontalAlign: 'center',
+        offsetY: 20,
+      },
+      fill: {
+        opacity: 1,
+      },
     }
-  };
-}
-
-
-  ngOnInit(): void {}
+    var chart = new ApexCharts(document.querySelector('#chart'), options)
+    chart.render()
+  }
+  ngAfterContentInit(): void {
+    axios({
+      method: 'GET',
+      url:
+        'http://localhost:3000/usertimesheet?from_dt=2021-09-25&to_dt=2021-10-13',
+    }).then((response) => {
+      console.log('USER TIMESHEET >>>>', response.data)
+      const activityName = response.data.map(function (usrName: any) {
+        return `${usrName.activityname} `
+      })
+      let uniqueActivity = [...new Set(activityName)]
+      console.log(uniqueActivity)
+      const fullName = response.data.map(function (userName: any) {
+        return `${userName.sum}`
+      })
+      var b = fullName.splice(0, 9)
+      var c = fullName.splice(0, 9)
+      var d = fullName.splice(0, 9)
+      console.log(d)
+      var e = new Array()
+      const n = 9
+      const result = new Array(Math.ceil(fullName.length / n))
+        .fill(e)
+        .map((_) => fullName.splice(0, n))
+      console.log(result)
+      console.log(fullName)
+      this.renderChart(
+        uniqueActivity as string[],
+        b as string[],
+        c as string[],
+        d as string[],
+      )
+    })
+  }
+  ngOnInit() {}
 }

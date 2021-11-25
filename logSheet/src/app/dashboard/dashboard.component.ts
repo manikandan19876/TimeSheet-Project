@@ -23,14 +23,20 @@ GroupBy = [
     groupby: "Activity"
   }
 ]
-  constructor() {}
+  constructor() {
+
+    // var objActivity = {"ActivityID ": "3", "fromDate": 2021-09-25, "toDate": 2021-10-13, "projectID": 33}
+    // console.log(objActivity);
+
+    // var objUser= {"fromDate": 2021-09-25, "toDate": 2021-10-13, "UserID": 76 }
+    // console.log(objUser);
+  }
 
   ngOnInit() {
     axios.get('http://localhost:3000/projects').then((res) => {
       console.log(res)
       this.theArray = res.data
     })
-
   }
 }
 

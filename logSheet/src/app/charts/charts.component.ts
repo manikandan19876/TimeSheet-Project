@@ -8,6 +8,7 @@ import axios from 'axios'
   styleUrls: ['./charts.component.css'],
 })
 export class ChartsComponent implements AfterContentInit {
+  currentItems = 'chartData';
 
   constructor() {}
   activityNam = new Array()

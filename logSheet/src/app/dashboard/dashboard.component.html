@@ -26,17 +26,11 @@
           </div>
         </div>
       </div>
-      <div class="first lg:col-3 flex align-items-center ; justify-content-start">
-        <div class="calendar col-8">
-          <label for="fromdate" class="sub-heading">Group By</label>
-          <!-- <p-dropdown id="get-request" [options]="" [(ngModel)]="" placeholder="Select a User/Activity" [group]="true" class="p-fluid w-full drop">
-            <ng-template let-group pTemplate="group">
-              <div class="p-d-flex p-ai-center">
-                <span>{{}}</span>
-              </div>
-            </ng-template>
-
-          </p-dropdown> -->
+      <div class="first lg:col-2 flex align-items-center ; justify-content-start">
+        <div class="calendar col-12 mb-1">
+          <label for="fromdate" class="sub-heading">Project</label>
+          <p-dropdown id="get-request" [options]="GroupBy" class="p-fluid w-full drop" optionLabel="groupby">
+          </p-dropdown>
         </div>
       </div>
     </div>

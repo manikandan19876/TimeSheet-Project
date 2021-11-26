@@ -3,27 +3,46 @@
     <div class="first lg:col-2 flex align-items-center ; justify-content-start">
       <div class="calendar col-12 mb-2">
         <label for="fromdate" class="sub-heading">Project</label>
-        <p-dropdown id="get-request" [disabled]="proDrop" [options]="project" class="p-fluid w-full drop" optionLabel="projectname" (onChange)="userDrop = true">
+        <p-dropdown id="pro-id" [disabled]="proDrop" [options]="project" class="p-fluid w-full drop"
+          optionLabel="projectname" (onChange)="userDrop = true; proId(projectId) " #projectId>
         </p-dropdown>
       </div>
     </div>
     <div class="second lg:col-2 flex align-items-center ; justify-content-start">
       <div class="calendar col-12 mb-2">
         <label for="fromdate" class="sub-heading">User</label>
-        <p-dropdown id="get-request" [disabled]="userDrop" [options]="user" class="p-fluid w-full drop" optionLabel="firstname" (onChange)="proDrop = true">
+        <p-dropdown id="user-id" [disabled]="userDrop" [options]="user" class="p-fluid w-full drop"
+          optionLabel="firstname" (onChange)="proDrop = true">
         </p-dropdown>
       </div>
     </div>
     <div class="third lg:col-2 flex align-items-center ; justify-content-start">
       <div class="calendar col-12 mb-2">
         <label for="fromdate" class="sub-heading">Time Series</label>
-        <p-dropdown class="p-fluid w-full drop" value="" [options]="Month" optionLabel="month" (onChange)="monthSelected(isSelection)" #isSelection></p-dropdown>
+        <p-dropdown class="p-fluid w-full drop" value="" [options]="Month" optionLabel="month"
+          (onChange)="monthSelected(isSelection)" #isSelection></p-dropdown>
       </div>
     </div>
   </div>
 </div>
 <div class="grid col-12">
-  <div class="col-6">
-    <div id="chart"></div>
-  <div>
+  <div class="col-8">
+    <div class="col-4" id="chart-year">
+      <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [dataLabels]="chartOptions.dataLabels"
+        [plotOptions]="chartOptions.plotOptions" [yaxis]="chartOptions.yaxis" [xaxis]="chartOptions.xaxis"
+        [subtitle]="chartOptions.subtitle" [colors]="chartOptions.colors" [states]="chartOptions.states"
+        [title]="chartOptions.title" [tooltip]="chartOptions.tooltip"></apx-chart>
+    </div>
+    <div class="col-4" id="chart-quarter">
+      <apx-chart [series]="chartQuarterOptions.series" [chart]="chartQuarterOptions.chart"
+        [legend]="chartQuarterOptions.legend" [plotOptions]="chartQuarterOptions.plotOptions"
+        [yaxis]="chartQuarterOptions.yaxis" [xaxis]="chartQuarterOptions.xaxis" [grid]="chartQuarterOptions.grid"
+        [title]="chartQuarterOptions.title "></apx-chart>
+    </div>
+  </div>
+
 </div>
+
+<!-- <div class="grid col-12"
+  <div id="chart" class="col-6"></div>
+</div> -->

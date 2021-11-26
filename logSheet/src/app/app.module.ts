@@ -15,10 +15,6 @@ import { NgApexchartsModule } from 'ng-apexcharts';
 import {TabMenuModule} from 'primeng-lts/tabmenu';
 import { ChartsComponent } from './charts/charts.component';
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,

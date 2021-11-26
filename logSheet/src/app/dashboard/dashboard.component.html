@@ -4,8 +4,9 @@
       <div class="first lg:col-2 flex align-items-center ; justify-content-start">
         <div class="calendar col-12 mb-1">
           <label for="fromdate" class="sub-heading">Project</label>
-          <p-dropdown id="get-request" [options]="theArray" class="p-fluid w-full drop" optionLabel="projectname"></p-dropdown>
- </div>
+          <p-dropdown id="get-request" [options]="theArray" class="p-fluid w-full drop" optionLabel="projectname">
+          </p-dropdown>
+        </div>
       </div>
       <div class="lg:col-4  second">
         <div class="
@@ -25,13 +26,15 @@
           </div>
         </div>
       </div>
-      <div class="first lg:col-3 flex align-items-center ; justify-content-start">
-        <div class="calendar col-8">
-          <label for="fromdate" class="sub-heading">Group By</label>
-          <p-dropdown id="get-request" [options]="second" class="p-fluid w-full drop" optionLabel="firstname"></p-dropdown>
+      <div class="first lg:col-2 flex align-items-center ; justify-content-start">
+        <div class="calendar col-12 mb-1">
+          <label for="fromdate" class="sub-heading">Project</label>
+          <p-dropdown id="get-request" [options]="GroupBy" class="p-fluid w-full drop" optionLabel="groupby">
+          </p-dropdown>
         </div>
       </div>
     </div>
   </div>
 </div>
 <app-charts></app-charts>
+

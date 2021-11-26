@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import {TabMenuModule} from 'primeng-lts/tabmenu';
 import { ChartsComponent } from './charts/charts.component';
+import { TablesComponent } from './tables/tables.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ChartsComponent } from './charts/charts.component';
     NavBarComponent,
     DashboardComponent,
     ChartsComponent,
+    TablesComponent,
   ],
   imports: [
     BrowserModule,
